@@ -46,24 +46,24 @@ $row = $result -> fetch_assoc();
     <form method="POST" action="update.php?id=<?php echo $row['id'];?>">
 
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" required>
+        <input type="text" name="nome" required value="<?php echo htmlspecialchars($row['nome']); ?>">
         <br><br>
         <label for="tipo">Tipo:</label>
         <select name="tipo" id="tipo">
-            <option value="comprimido">Comprimido</option>
-            <option value="xarope">Xarope</option>
-            <option value="pomada">Pomada</option>
-            <option value="injecao">Injeção</option>
+            <option value="comprimido" <?php if($row['tipo'] == 'comprimido') echo 'selected'; ?>>Comprimido</option>
+            <option value="xarope" <?php if($row['tipo'] == 'xarope') echo 'selected'; ?>>Xarope</option>
+            <option value="pomada" <?php if($row['tipo'] == 'pomada') echo 'selected'; ?>>Pomada</option>
+            <option value="injecao" <?php if($row['tipo'] == 'injecao') echo 'selected'; ?>>Injeção</option>
         </select>
         <br><br>
         <label for="preco">Preço:</label>
-        <input type="number" name="preco" required>
+        <input type="number" name="preco" required value="<?php echo htmlspecialchars($row['preco']); ?>">
         <br><br>
         <label for="validade">Validade:</label>
-        <input type="date" name="validade" required>
+        <input type="date" name="validade" required value="<?php echo htmlspecialchars($row['validade']); ?>">
         <br><br>
         <label for="quantidade">Quantidade:</label>
-        <input type="number" name="quantidade" required>
+        <input type="number" name="quantidade" required value="<?php echo htmlspecialchars($row['quantidade']); ?>">
         <br><br>
 
         <input type="submit" name="create" value="Atualizar"><br>

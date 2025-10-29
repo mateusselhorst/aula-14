@@ -4,13 +4,13 @@ include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && (isset($_POST['create']))) {
 
-    $name = $_POST['name'];
+    $nome = $_POST['nome'];
     $tipo = $_POST['tipo'];
     $preco = $_POST['preco'];
     $validade = $_POST['validade'];
     $quantidade = $_POST['quantidade'];
 
-    $sql = "INSERT INTO medicamentos (nome, tipo, preco, validade, quantidade) VALUE ('$name', '$tipo', '$preco', '$validade', '$quantidade')";
+    $sql = "INSERT INTO medicamentos (nome, tipo, preco, validade, quantidade) VALUE ('$nome', '$tipo', '$preco', '$validade', '$quantidade')";
 
     if ($conn->query($sql) == true) {
         echo "Novo registro no Banco!";
@@ -35,8 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && (isset($_POST['create']))) {
 
     <form method="POST" action="create.php">
 
-        <label for="name">Nome:</label>
-        <input type="text" name="name" required>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" required>
         <br><br>
         <label for="tipo">Tipo:</label>
         <select name="tipo" id="tipo">

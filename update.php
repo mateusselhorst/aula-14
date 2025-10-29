@@ -66,7 +66,7 @@ $row = $result -> fetch_assoc();
         <input type="number" name="quantidade" required>
         <br><br>
 
-        <input type="submit" name="create" value="Atualizar"><br><br>
+        <input type="submit" name="create" value="Atualizar"><br>
 
     </form>
 

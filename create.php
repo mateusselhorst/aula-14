@@ -5,8 +5,12 @@ include 'db.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && (isset($_POST['create']))) {
 
     $name = $_POST['name'];
-    $email = $_POST['email'];
-    $sql = "INSERT INTO usuario (name, email) VALUE ('$name', '$email')";
+    $tipo = $_POST['tipo'];
+    $preco = $_POST['preco'];
+    $validade = $_POST['validade'];
+    $quantidade = $_POST['quantidade'];
+
+    $sql = "INSERT INTO medicamentos (nome, tipo, preco, validade, quantidade) VALUE ('$name', '$tipo', '$preco', '$validade', '$quantidade')";
 
     if ($conn->query($sql) == true) {
         echo "Novo registro no Banco!";
@@ -34,11 +38,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && (isset($_POST['create']))) {
         <label for="name">Nome:</label>
         <input type="text" name="name" required>
         <br><br>
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
+        <label for="tipo">Tipo:</label>
+        <select name="tipo" id="tipo">
+            <option value="comprimido">Comprimido</option>
+            <option value="xarope">Xarope</option>
+            <option value="pomada">Pomada</option>
+            <option value="injecao">Injeção</option>
+        </select>
+        <br><br>
+        <label for="preco">Preço:</label>
+        <input type="number" name="preco" required>
+        <br><br>
+        <label for="validade">Validade:</label>
+        <input type="date" name="validade" required>
+        <br><br>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" name="quantidade" required>
         <br><br>
 
-        <input type="submit" name="create" value="Adicionar">
+        <input type="submit" name="create" value="Adicionar"><br><br>
 
     </form>
 

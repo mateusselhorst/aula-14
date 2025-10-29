@@ -2,7 +2,7 @@
 
     include 'db.php';
 
-    $sql = "SELECT * FROM usuario";
+    $sql = "SELECT * FROM medicamentos";
     $result = $conn -> query($sql);
 
     if($result -> num_rows > 0){
@@ -10,8 +10,10 @@
         <tr>
             <th> ID </th>
             <th> Nome </th>
-            <th> Email </th>
-            <th> Data de Criação </th>
+            <th> Tipo </th>
+            <th> Preço </th>
+            <th> Validade </th>
+            <th> Quantidade </th>
             <th> Ações </th>
         </tr>";
 
@@ -19,9 +21,11 @@
 
             echo "<tr>
                         <td> {$row['id']} </td>
-                        <td> {$row['name']} </td>
-                        <td> {$row['email']} </td>
-                        <td> {$row['create_at']} </td>
+                        <td> {$row['nome']} </td>
+                        <td> {$row['tipo']} </td>
+                        <td> {$row['preco']} </td>
+                        <td> {$row['validade']} </td>
+                        <td> {$row['quantidade']} </td>
                         <td>
                             <a href='update.php?id={$row['id']}'>Editar<a>
                             <a href='delete.php?id={$row['id']}'>Excluir<a>

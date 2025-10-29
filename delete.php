@@ -4,7 +4,7 @@
 
     $id = $_GET['id'];
 
-    $sql = "DELETE FROM usuario WHERE id=$id";
+    $sql = "DELETE FROM medicamentos WHERE id=$id";
 
         if ($conn->query($sql) == true) {
         echo "Novo registro no Banco!";
